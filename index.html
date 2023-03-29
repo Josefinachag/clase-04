@@ -11,7 +11,7 @@
         <main>
             <h1>¿Quieres dibujar a <span id="title"></span>?</h1>
             <p>Siendo las <span id="time"></span> hrs., te desafío a dibujar a este digimon de nivel <span id="level"></span> en la <span id="next"></span>.</p>
-            <p>¡Pero tienes que dibujarlo de MEMORIA! Una vez aceptes el desafío, no podrás volver a verlo.</p>
+            <p>¡Pero tienes que dibujarlo de memoria! Una vez aceptes el desafío, no podrás volver a verlo.</p>
             <p id="accept"></p>
         </main>
         <aside></aside>
@@ -20,9 +20,9 @@
             var datos;
             var datosArreglados;
             var x;
-            var lasHoras = "HH"; 
+            var lasHoras = "HH";
             var losMinutos = "MM";
-        
+
             function preload() {
                 datos = loadJSON("https://digimon-api.vercel.app/api/digimon");
             }
@@ -30,13 +30,13 @@
                 datosArreglados = Object.values(datos);
                 //Yo revisaría cómo se usa la siguiente x en la línea 36 
                 x = Math.floor(random(0, (datosArreglados.length)-1));
-                select("#title").html("Andromon");
+                select("#title").html("NombreDelDigimon");
                 select("#time").html(lasHoras + ":" + losMinutos);
-                select("#level").html(level);
+                select("#level").html("NivelDelDigimon");
                 var elAside = select("aside");
                 createImg(datosArreglados[x].img).parent(elAside).style("width", "100%");
-                createA("https://digimon.shadowsmith.com/img/andromon.jpg" + "Andromon", "siguiente página").parent("next");
-                createA("https://digimon.shadowsmith.com/img/andromon.jpg" + "Andromon", "Acepto, dibujaré a " + "Andromon" + " ✅").parent("accept");
+                createA("page.html?data=" + "NombreDelDigimon", "siguiente página").parent("next");
+                createA("page.html?data=" + "NombreDelDigimon", "Acepto, dibujaré a " + "NombreDelDigimon" + " ✅").parent("accept");
                 noCanvas();
             }
         </script>
