@@ -30,13 +30,13 @@
                 datosArreglados = Object.values(datos);
                 //Yo revisaría cómo se usa la siguiente x en la línea 36 
                 x = Math.floor(random(0, (datosArreglados.length)-1));
-                select("#title").html("name");
+                select("#title").html("Andromon");
                 select("#time").html(lasHoras + ":" + losMinutos);
                 select("#level").html(level);
                 var elAside = select("aside");
                 createImg(datosArreglados[x].img).parent(elAside).style("width", "100%");
-                createA("https://digimon.shadowsmith.com/img/andromon.jpg" + "NombreDelDigimon", "siguiente página").parent("next");
-                createA("https://digimon.shadowsmith.com/img/andromon.jpg" + "NombreDelDigimon", "Acepto, dibujaré a " + "NombreDelDigimon" + " ✅").parent("accept");
+                createA("https://digimon.shadowsmith.com/img/andromon.jpg" + "Andromon", "siguiente página").parent("next");
+                createA("https://digimon.shadowsmith.com/img/andromon.jpg" + "Andromon", "Acepto, dibujaré a " + "Andromon" + " ✅").parent("accept");
                 noCanvas();
             }
         </script>
