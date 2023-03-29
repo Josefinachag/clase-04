@@ -20,8 +20,13 @@
             var datos;
             var datosArreglados;
             var x;
-            var lasHoras = "HH";
+            var lasHoras = "HH"; {
+                var lasHoras = new Date().getHours();
+
+            // Pongo la hora en el span con identidad hora
+            document.querySelector("#hora").innerHTML = laHora;
             var losMinutos = "MM";
+            }
 
             function preload() {
                 datos = loadJSON("https://digimon-api.vercel.app/api/digimon");
